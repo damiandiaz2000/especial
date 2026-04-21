@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tengo algo que decirte...</title>
+    <style>
+        body {
+            background-color: #fff0f3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(255, 75, 110, 0.2);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .card:hover { transform: scale(1.05); }
+        h1 { color: #ff4b6e; font-size: 2em; }
+        p { color: #555; font-size: 1.2em; line-height: 1.6; }
+        .heart { color: #ff4b6e; font-size: 50px; animation: beat 1s infinite; }
+        @keyframes beat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="heart">❤</div>
+        <h1>¡Hola!</h1>
+        <p>Solo quería decirte por aquí<br>
+        que <strong>me gustas mucho</strong>.<br>
+        Me encanta pasar tiempo contigo.</p>
+    </div>
+</body>
+</html>
