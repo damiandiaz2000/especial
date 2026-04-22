@@ -2,42 +2,89 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Tengo algo que decirte...</title>
+    <title>¡Feliz Cumpleaños Ing. Carlos Chávez!</title>
     <style>
         body {
-            background-color: #fff0f3;
+            background-color: #0a0a0a;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             height: 100vh;
             margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
         }
         .card {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(255, 75, 110, 0.2);
             text-align: center;
-            transition: transform 0.3s;
+            padding: 40px;
+            border: 2px solid #007bff;
+            border-radius: 15px;
+            background: #161616;
+            box-shadow: 0 0 25px rgba(0, 123, 255, 0.4);
+            max-width: 500px;
+            z-index: 10;
         }
-        .card:hover { transform: scale(1.05); }
-        h1 { color: #ff4b6e; font-size: 2em; }
-        p { color: #555; font-size: 1.2em; line-height: 1.6; }
-        .heart { color: #ff4b6e; font-size: 50px; animation: beat 1s infinite; }
-        @keyframes beat {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.2); }
+        h1 { 
+            color: #007bff; 
+            margin-bottom: 10px; 
+            font-size: 1.8rem;
+            text-transform: uppercase;
+        }
+        h2 {
+            font-size: 2rem;
+            margin-top: 20px;
+        }
+        p { 
+            font-size: 1.1rem; 
+            line-height: 1.6; 
+            color: #e0e0e0;
+        }
+        .highlight {
+            color: #28a745;
+            font-weight: bold;
+            font-size: 1.3rem;
+            margin-top: 20px;
+        }
+        hr {
+            border: 0;
+            height: 1px;
+            background: #333;
+            margin: 20px 0;
         }
     </style>
 </head>
 <body>
     <div class="card">
-        <div class="heart">❤</div>
-        <h1>Hola Fiorella</h1>
-        <p>Solo quería decirte por aquí<br>
-        que <strong>me gustas mucho</strong>.<br>
-        Me encanta pasar tiempo contigo.</p>
+        <h1>🚀 TECHNOFAST DEL ECUADOR</h1>
+        <hr>
+        <h2>¡Feliz Cumpleaños!</h2>
+        <br>
+        <p>Estimado <strong>Ing. Carlos Chávez</strong>,</p>
+        <p>Le deseamos un día lleno de éxito y una nueva vuelta al sol liderando con la excelencia que lo caracteriza.</p>
+        <p class="highlight">¡Salud y prosperidad!</p>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script>
+        window.onload = function() {
+            var duration = 5 * 1000;
+            var animationEnd = Date.now() + duration;
+            var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+
+            function randomInRange(min, max) {
+              return Math.random() * (max - min) + min;
+            }
+
+            var interval = setInterval(function() {
+              var timeLeft = animationEnd - Date.now();
+              if (timeLeft <= 0) return clearInterval(interval);
+
+              var particleCount = 50 * (timeLeft / duration);
+              confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
+              confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
+            }, 250);
+        };
+    </script>
 </body>
 </html>
